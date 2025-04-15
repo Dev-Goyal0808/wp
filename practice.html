@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="myname">
+        <br>
+        <label for="last">Last Name</label>
+        <input type="text" id="last">
+        <br>
+        <input type="button"name="Print" id="button" value="Print">
+        </form>
+        <div id="result">
+
+        </div>
+        <script>
+            document.getElementById("button").onclick=function (){print()}
+            function print()
+            {
+                var s=document.getElementById("myname").value
+                var l=document.getElementById("last").value
+                document.getElementById("result").innerHTML=s+" "+l+"! welcome"
+            }
+        </script>
+<form >
+    <label for="name">Name</label>
+    <input type="text" name="info" id="name">
+    <br>
+    <label for="fname">Father Name</label>
+    <input type="text" name="info" id="fname">
+    <br>
+    <label for="mname"> Mother Name</label>
+    <input type="text" name="info" id="mname">
+    <br>
+    <input type="button" value="capital" id="caps">
+</form>
+<div id="re">
+
+</div>
+<script>
+    document.getElementById("caps").onclick = function () {capital()}
+
+    function capital() {
+        var inputs = document.getElementsByName("info");
+        var text = "";
+        
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = inputs[i].value.toUpperCase();
+            text += inputs[i].value + " ";
+        }
+        
+        document.getElementById("re").innerText = text.trim();
+    }
+</script>
+<form >
+    <label for="sname">Name:</label>
+    <input type="text" id="sync">
+    <br>
+    <label for="sname">Name in Capital:</label>
+    <input type="text" id="sync1">
+    </form>
+    <script>
+        document.getElementById("sync").addEventListener("input", function() {
+        document.getElementById("sync1").value = this.value.toUpperCase();
+    });
+    </script>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero aliquam voluptas, provident iusto repellendus nihil odio sit impedit necessitatibus magnam!</p>
+    <br>
+    <h2>Heading</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quos!</p>
+    <span>Lorem ipsum dolor sit amet.</span><br>
+    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate reprehenderit nam iure velit inventore quasi quo necessitatibus provident modi? Minus, ullam ipsum officia quaerat quas maiores nisi fugiat amet illo!</span>
+    <br>
+    <input type="button" value="font" id="butt">
+    <script>
+        document.getElementById("butt").onclick = function() { para(); };
+
+        function para() {
+            var parag = document.getElementsByTagName("p");
+            for (var j = 0; j < parag.length; j++) {
+                parag[j].style.fontSize = "20px";
+            }
+        }
+    </script>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="form-input"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" class="form-input"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-input"><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" class="form-input"><br><br>
+
+        <input type="button" value="Clear Fields" id="clearButton">
+    </form>
+
+    <script>
+        document.getElementById("clearButton").onclick = function() {
+            var inputs = document.getElementsByClassName("form-input");
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].value = "";  // Clear each input field
+            }
+        };
+    </script>
+</body>
+</html>

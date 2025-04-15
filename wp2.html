@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Incredible India Trips</title>
+  <link rel="stylesheet" href="c.css"/>
+</head>
+<body> 
+  <header>
+    <h1>Explore Incredible India</h1>
+  </header>
+
+  <!-- Top Destinations -->
+  <section class="places">
+    <h2>Top Destinations</h2>
+    <div class="cards">
+      <div class="card">
+        <a href="jaipur.html"><img src="jaipur.webp" alt="Jaipur"></a>
+        <h3>Jaipur</h3>
+      </div>
+      <div class="card">
+        <a href="goa.html"><img src="goa.jpg" alt="Goa"></a>
+        <h3>Goa</h3>
+      </div>
+      <div class="card">
+        <a href="kashmir.html"><img src="kashmir.jpg" alt="Kashmir"></a>
+        <h3>Kashmir</h3>
+      </div>
+      <div class="card">
+        <a href="agra.html"><img src="agra.jpg" alt="Agra"></a>
+        <h3>Agra</h3>
+      </div>
+      <div class="card">
+        <a href="manali.html"><img src="manali.avif" alt="Manali"></a>
+        <h3>Manali</h3>
+      </div>
+      <div class="card">
+        <a href="kerela.html"><img src="kerela.jpg" alt="Kerala"></a>
+        <h3>Kerala</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Modes -->
+  <section class="travel-mode">
+    <h2>Choose Travel Mode</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="car.webp" alt="Car">
+        <h3>Car</h3>
+      </div>
+      <div class="card">
+        <img src="train.jpg" alt="Train">
+        <h3>Train</h3>
+      </div>
+      <div class="card">
+        <img src="flight.jpg" alt="Flight">
+        <h3>Flight</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking">
+    <h2>Book Your Trip</h2>
+    <form id="bookingForm">
+      <label>Full Name:</label>
+      <input type="text" required><br>
+
+      <label>Destination:</label>
+      <select>
+        <option hidden>Select</option>
+        <option>Jaipur</option>
+        <option>Goa</option>
+        <option>Kashmir</option>
+        <option>Agra</option>
+        <option>Manali</option>
+        <option>Kerala</option>
+        <option>Udaipur</option>
+        <option>Ooty</option>
+        <option>Mahabaleshwar</option>
+        <option>Vrindawan</option>
+      </select><br>
+
+      <label>Travel Mode:</label>
+      <select>
+        <option hidden>Select</option>
+        <option>Car</option>
+        <option>Train</option>
+        <option>Flight</option>
+      </select><br>
+
+      <label>Travel Date:</label>
+      <input type="date" required><br>
+
+      <button type="submit">Book Now</button>
+    </form>
+    <p id="confirmation"></p>
+  </section>
+
+  <!-- Trip Budget Estimator -->
+  <section class="budget-estimator">
+    <h2>Trip Budget Estimator</h2>
+    <form id="budgetForm">
+      <label>Destination:</label>
+      <select id="budgetDestination" required>
+        <option hidden>Select</option>
+        <option value="Jaipur">Jaipur</option>
+        <option value="Goa">Goa</option>
+        <option value="Kashmir">Kashmir</option>
+        <option value="Agra">Agra</option>
+        <option value="Manali">Manali</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Udaipur">Udaipur</option>
+        <option value="Ooty">Ooty</option>
+        <option value="Mahabaleshwar">Mahabaleshwar</option>
+        <option value="Vrindawan">Vrindawan</option>
+      </select><br>
+
+      <label>Travel Mode:</label>
+      <select id="budgetMode" required>
+        <option hidden>Select</option>
+        <option value="Car">Car</option>
+        <option value="Train">Train</option>
+        <option value="Flight">Flight</option>
+      </select><br>
+
+      <label>Number of Travelers:</label>
+      <input type="number" id="travelers" min="1" required><br>
+
+      <label>Number of Days:</label>
+      <input type="number" id="days" min="1" required><br>
+
+      <button type="submit">Estimate Budget</button>
+    </form>
+    <p id="budgetResult"></p>
+  </section>
+
+  <script src="j.js"></script>
+  <script>
+    document.getElementById("budgetForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const destination = document.getElementById("budgetDestination").value;
+      const travelMode = document.getElementById("budgetMode").value;
+      const travelers = parseInt(document.getElementById("travelers").value);
+      const days = parseInt(document.getElementById("days").value);
+      const result = document.getElementById("budgetResult");
+
+      const baseCosts = {
+        Jaipur: 1500,
+        Goa: 3000,
+        Kashmir: 3500,
+        Agra: 1200,
+        Manali: 2500,
+        Kerala: 3200,
+        Udaipur:2800,
+        Ooty:3300,
+        Mahabaleshwar:2800,
+        Vrindawan:2000
+      };
+
+      const travelCosts = {
+        Car: 1000,
+        Train: 1500,
+        Flight: 4000
+      };
+
+      const stayPerDay = 800;
+
+      if (destination && travelMode && travelers > 0 && days > 0) {
+        const destinationCost = baseCosts[destination];
+        const transport = travelCosts[travelMode];
+        const total = ((destinationCost + (stayPerDay * days)) * travelers) + transport;
+        result.innerHTML = `💰 Estimated Total Budget for ${travelers} traveler(s) to ${destination} by ${travelMode} for ${days} day(s): <strong>₹${total}</strong>`;
+      } else {
+        result.textContent = "Please fill out all fields.";
+      }
+    });
+  </script>
+</body>
+</html>

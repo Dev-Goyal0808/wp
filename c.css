@@ -1,0 +1,194 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #fff);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #0077cc;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header a {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+/* Cards Layout */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px 20px;
+}
+
+/* Individual Card */
+.card {
+  background: white;
+  width: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 12px;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+/* Booking Section */
+.booking {
+  max-width: 450px;
+  background: #fff;
+  margin: 40px auto;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.booking form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking label {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.booking input,
+.booking select {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.booking button {
+  margin-top: 20px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.booking button:hover {
+  background: #005fa3;
+}
+
+/* Confirmation Message */
+#confirmation {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+.budget-estimator {
+  background-color: #fefae0;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.budget-estimator h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.budget-estimator input,
+.budget-estimator select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.budget-estimator button {
+  padding: 10px 15px;
+  background-color: #00897b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.budget-estimator button:hover {
+  background-color: #00695c;
+}
+
+.budget-estimator p {
+  font-size: 1.1em;
+  margin-top: 15px;
+  color: #444;
+}
+
+body.dark-mode .budget-estimator {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark-mode .budget-estimator input,
+body.dark-mode .budget-estimator select {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+body.dark-mode .budget-estimator button {
+  background-color: #26a69a;
+}
+.video-container iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
